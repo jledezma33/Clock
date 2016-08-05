@@ -1,0 +1,6 @@
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ClockWithEvents\bin\Debug\ClockWithEvents.dll.config
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ClockWithEvents\bin\Debug\ClockWithEvents.dll
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ClockWithEvents\bin\Debug\ClockWithEvents.pdb
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ClockWithEvents\obj\Debug\ClockWithEvents.csprojResolveAssemblyReference.cache
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ClockWithEvents\obj\Debug\ClockWithEvents.dll
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ClockWithEvents\obj\Debug\ClockWithEvents.pdb

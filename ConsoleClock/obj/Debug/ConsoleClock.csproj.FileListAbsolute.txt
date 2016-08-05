@@ -1,0 +1,8 @@
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\bin\Debug\ConsoleClock.exe.config
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\bin\Debug\ConsoleClock.exe
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\bin\Debug\ConsoleClock.pdb
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\bin\Debug\ClockWithEvents.dll
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\bin\Debug\ClockWithEvents.pdb
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\obj\Debug\ConsoleClock.csprojResolveAssemblyReference.cache
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\obj\Debug\ConsoleClock.exe
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\ConsoleClock\obj\Debug\ConsoleClock.pdb

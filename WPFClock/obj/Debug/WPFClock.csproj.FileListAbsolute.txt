@@ -1,0 +1,16 @@
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\bin\Debug\WPFClock.exe.config
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\bin\Debug\WPFClock.exe
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\bin\Debug\WPFClock.pdb
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\bin\Debug\ClockWithEvents.dll
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\bin\Debug\ClockWithEvents.pdb
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock.csprojResolveAssemblyReference.cache
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\MainWindow.g.cs
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\App.g.cs
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock_MarkupCompile.cache
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock_MarkupCompile.lref
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\MainWindow.baml
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock.g.resources
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock.Properties.Resources.resources
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock.csproj.GenerateResource.Cache
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock.exe
+C:\Users\Jesus Ledezma\Desktop\School Stuff\A7starter\WPFClock\obj\Debug\WPFClock.pdb
