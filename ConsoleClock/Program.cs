@@ -9,10 +9,11 @@ namespace ConsoleClock
 {
     class Program
     {
-        Clock ticker;
+        Clock ticker = new Clock();
 
         static void Main(string[] args)
         {
+            
             Program p = new Program();
             p.Run();
         }
@@ -27,9 +28,9 @@ namespace ConsoleClock
             //These lines are equivalent, they just point to different methods
 
             ticker.MilliSecondsChanged += new Clock.TimeChangedDelegate(MilliSecondsChangedHandler);
-            ticker.SecondsChanged += SecondsChangedHandler;
-            ticker.MinutesChanged += MinutesChangedHandler;
-            ticker.HoursChanged += HoursChangedHandler;
+            ticker.SecondsChanged += new Clock.TimeChangedDelegate(SecondsChangedHandler);
+            ticker.MinutesChanged += new Clock.TimeChangedDelegate(MinutesChangedHandler);
+            ticker.HoursChanged += new Clock.TimeChangedDelegate(HoursChangedHandler);
             
             ticker.Start();
         }
@@ -41,22 +42,22 @@ namespace ConsoleClock
 
         private void HoursChangedHandler(int hours)
         {
-            Console.Write("\r"+ hours.ToString() + ":");
+            Console.Write("\r" + hours.ToString() + ":  ");
         }
 
         private void MinutesChangedHandler(int minutes)
         {
-            Console.Write(minutes.ToString() + ":");
+            Console.Write(minutes.ToString() + ":  ");
         }
 
         void SecondsChangedHandler(int seconds)
         {
-            Console.Write(seconds.ToString() + ":");
+            Console.Write(seconds.ToString() + ":  ");
         }
 
         private void MilliSecondsChangedHandler(int milliseconds)
         {
-            Console.Write(milliseconds.ToString());
+            Console.Write(milliseconds.ToString() + "  ");
         }
     }
 }
