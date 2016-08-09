@@ -10,7 +10,7 @@ namespace ConsoleClock
     class Program
     {
         Clock ticker = new Clock();
-
+        //protected static int positon;
         static void Main(string[] args)
         {
             
@@ -27,11 +27,12 @@ namespace ConsoleClock
 
             //These lines are equivalent, they just point to different methods
 
-            ticker.MilliSecondsChanged += new Clock.TimeChangedDelegate(MilliSecondsChangedHandler);
-            ticker.SecondsChanged += new Clock.TimeChangedDelegate(SecondsChangedHandler);
-            ticker.MinutesChanged += new Clock.TimeChangedDelegate(MinutesChangedHandler);
             ticker.HoursChanged += new Clock.TimeChangedDelegate(HoursChangedHandler);
+            ticker.MinutesChanged += new Clock.TimeChangedDelegate(MinutesChangedHandler);
+            ticker.SecondsChanged += new Clock.TimeChangedDelegate(SecondsChangedHandler);
+            ticker.MilliSecondsChanged += new Clock.TimeChangedDelegate(MilliSecondsChangedHandler);
             
+
             ticker.Start();
         }
 
@@ -42,22 +43,26 @@ namespace ConsoleClock
 
         private void HoursChangedHandler(int hours)
         {
-            Console.Write("\r" + hours.ToString() + ":  ");
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write("0"+hours.ToString() + ":");
         }
 
         private void MinutesChangedHandler(int minutes)
         {
-            Console.Write(minutes.ToString() + ":  ");
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.Write("0"+minutes.ToString() + ":");
         }
 
-        void SecondsChangedHandler(int seconds)
+        private void SecondsChangedHandler(int seconds)
         {
-            Console.Write(seconds.ToString() + ":  ");
+            Console.SetCursorPosition(6, Console.CursorTop);
+            Console.Write("0"+seconds.ToString() + ".");
         }
 
         private void MilliSecondsChangedHandler(int milliseconds)
         {
-            Console.Write(milliseconds.ToString() + "  ");
+            Console.SetCursorPosition(9, Console.CursorTop);
+            Console.Write(milliseconds.ToString());
         }
     }
 }

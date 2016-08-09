@@ -45,22 +45,22 @@ namespace ClockWithEvents
             for (int i = 0; i < 1000000; i++)
             {
                 milliseconds++;
-                if(milliseconds >= MILLISECONDS_IN_SECOND)
+                if(milliseconds == MILLISECONDS_IN_SECOND)
                 {
                     milliseconds = 0;
                     seconds++;
                 }
-                if(seconds >= SECONDS_IN_MINUTE)
+                if(seconds == SECONDS_IN_MINUTE)
                 {
                     seconds = 0;
                     minutes++;
                 }
-                if(minutes >= MINUTES_IN_HOUR)
+                if(minutes == MINUTES_IN_HOUR)
                 {
                     minutes = 0;
                     hours++;
                 }
-                if(hours >= HOURS_IN_DAY)
+                if(hours == HOURS_IN_DAY)
                 {
                     hours = 0;
                     days++;
@@ -108,7 +108,7 @@ namespace ClockWithEvents
             if (SecondsChanged != null)
             {
                 //this line is incorrect.  Fix it! :)
-                SecondsChanged.Invoke(milliseconds / MILLISECONDS_IN_SECOND);
+                SecondsChanged.Invoke(seconds);
             }
         }
 
@@ -116,7 +116,7 @@ namespace ClockWithEvents
         {
             if (MinutesChanged != null)
             {
-                MinutesChanged.Invoke(seconds / SECONDS_IN_MINUTE);
+                MinutesChanged.Invoke(minutes);
             }
         }
 
@@ -125,7 +125,7 @@ namespace ClockWithEvents
         {
             if(HoursChanged != null)
             {
-                HoursChanged.Invoke(minutes / MINUTES_IN_HOUR);
+                HoursChanged.Invoke(hours);
             }
         }
 
@@ -133,7 +133,7 @@ namespace ClockWithEvents
         {
             if(DaysChanged != null)
             {
-                DaysChanged.Invoke(hours / HOURS_IN_DAY);
+                DaysChanged.Invoke(days);
             }
         }
     }

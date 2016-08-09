@@ -25,6 +25,7 @@ namespace WPFClock
         private Clock ticker;
 
         private delegate void NoArg();
+        private delegate void MyEventHandler(object sender, EventArgs e);
 
         public MainWindow()
         {
@@ -52,28 +53,132 @@ namespace WPFClock
              *  All the Dispatch/BeginInvoke magic happens here in the client code.
              * 
              */
+            ticker.MilliSecondsChanged += Ticker_MilliSecondsChangedOnDifferentThread;
             ticker.SecondsChanged += Ticker_SecondsChangedOnDifferentThread;
+            ticker.MinutesChanged += Ticker_MinutesChangedOnDifferentThread;
+            ticker.HoursChanged += Ticker_HoursChangedOnDifferentThread;
+            ticker.DaysChanged += Ticker_DaysChangedOnDifferentThread;
             start.BeginInvoke(null, null);
             
         }
 
-        
-        private void Ticker_TimeChangedUIThread(int currentTime)
+        private void Ticker_MilliSecondsChangedUIThread(int milliseconds)
+        {
+            MilliSecondsLabel.Content = milliseconds;
+            
+        }
+
+        private void Ticker_MilliSecondsChangedOnDifferentThread(int milliseconds)
+        {
+            MilliSecondsLabel.Dispatcher.BeginInvoke(new Action<int>(Ticker_MilliSecondsChangedUIThread), milliseconds);
+        }
+
+        private void millisecondsCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ticker.MilliSecondsChanged -= Ticker_MilliSecondsChangedOnDifferentThread;
+            MilliSecondsLabel.Foreground = Brushes.Red;
+        }
+
+        private void millisecondsCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ticker.MilliSecondsChanged += Ticker_MilliSecondsChangedOnDifferentThread;
+            MilliSecondsLabel.Foreground = Brushes.Green;
+        }
+
+        private void Ticker_SecondsChangedUIThread(int seconds)
         {
             /*
              * This method is executed by the UI thread, and so can modify the label directly.
              */
-            SecondsLabel.Content = currentTime;        
+            SecondsLabel.Content = "0"+seconds+":";        
         }
 
-        private void Ticker_SecondsChangedOnDifferentThread(int currentTime)
+        private void Ticker_SecondsChangedOnDifferentThread(int seconds)
         {
             /*
              * Here's where the Clock's thread will put a message on the UI thread's queue of work,
              * again, through the use of a delegate
              */
-            SecondsLabel.Dispatcher.BeginInvoke(new Action<int>(Ticker_TimeChangedUIThread), currentTime);
+            SecondsLabel.Dispatcher.BeginInvoke(new Action<int>(Ticker_SecondsChangedUIThread), seconds);
         }
 
+        private void secondsCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ticker.SecondsChanged -= Ticker_SecondsChangedOnDifferentThread;
+            SecondsLabel.Foreground = Brushes.Red;
+        }
+
+        private void secondsCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ticker.SecondsChanged += Ticker_SecondsChangedOnDifferentThread;
+            SecondsLabel.Foreground = Brushes.Green;
+        }
+
+        private void Ticker_MinutesChangedUIThread(int minutes)
+        {
+            MinutesLabel.Content = "0"+minutes+":";
+        }
+
+        private void Ticker_MinutesChangedOnDifferentThread(int minutes)
+        {
+            MinutesLabel.Dispatcher.BeginInvoke(new Action<int>(Ticker_MinutesChangedUIThread), minutes);
+        }
+
+        private void minutesCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ticker.MinutesChanged -= Ticker_MinutesChangedOnDifferentThread;
+            MinutesLabel.Foreground = Brushes.Red;
+        }
+
+        private void minutesCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ticker.MinutesChanged += Ticker_MinutesChangedOnDifferentThread;
+            MinutesLabel.Foreground = Brushes.Green;
+
+        }
+
+        private void Ticker_HoursChangedUIThread(int hours)
+        {
+           HoursLabel.Content = "0"+hours+":";
+        }
+
+        private void Ticker_HoursChangedOnDifferentThread(int hours)
+        {
+           HoursLabel.Dispatcher.BeginInvoke(new Action<int>(Ticker_HoursChangedUIThread), hours);
+        }
+
+        private void hoursCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ticker.HoursChanged -= Ticker_HoursChangedOnDifferentThread;
+            HoursLabel.Foreground = Brushes.Red;
+        }
+
+        private void hoursCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ticker.HoursChanged += Ticker_HoursChangedOnDifferentThread;
+            HoursLabel.Foreground = Brushes.Green;
+        }
+
+        private void Ticker_DaysChangedUIThread(int days)
+        {
+            DaysLabel.Content = "0"+days;
+        }
+
+        private void Ticker_DaysChangedOnDifferentThread(int days)
+        {
+            DaysLabel.Dispatcher.BeginInvoke(new Action<int>(Ticker_DaysChangedUIThread), days);
+        }
+
+        private void daysCheckBox_Checked(object sender, RoutedEventArgs e)
+        {  
+            ticker.HoursChanged -= Ticker_HoursChangedOnDifferentThread;
+            DaysLabel.Foreground = Brushes.Red;
+        }
+
+        private void daysCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ticker.DaysChanged += Ticker_DaysChangedOnDifferentThread;
+            DaysLabel.Foreground = Brushes.Green;
+        }
     }
 }

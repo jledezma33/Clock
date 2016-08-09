@@ -7,14 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
 
-    <Grid>
+    <Grid Background="#FF7878D4">
 
-        <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label x:Name="SecondsLabel" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36">Text</Label>
+        <Label x:Name="DaysLabel" Content="00" HorizontalAlignment="Center" Margin="36,30,81,219" VerticalAlignment="Center" FontSize="36" Grid.ColumnSpan="2" Width="141" Height="71"/>
+        <Label x:Name="HoursLabel" Content="00" HorizontalAlignment="Center" Margin="22,136,31,126" VerticalAlignment="Center" FontSize="36"/>
+        <Label x:Name="MinutesLabel" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" Margin="22,136,31,126" Content="00"/>
+        <Label x:Name="SecondsLabel" Content="00" HorizontalAlignment="Center" Margin="29,136,25,126" VerticalAlignment="Center" FontSize="36" Grid.Column="2"/>
+        <Label x:Name="MilliSecondsLabel" Content="00" HorizontalAlignment="Center" Margin="28,136,25,126" VerticalAlignment="Center" FontSize="36" Grid.Column="3"/>
+        <CheckBox x:Name="daysCheckBox" Content="Days" HorizontalAlignment="Left" Margin="40,9,0,0" VerticalAlignment="Top" Width="44" Checked="daysCheckBox_Checked" Unchecked="daysCheckBox_Unchecked"/>
+        <CheckBox x:Name="minutesCheckBox" Content="Minutes" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="27,119,0,0" Checked="minutesCheckBox_Checked" Unchecked="minutesCheckBox_Unchecked"/>
+        <CheckBox x:Name="hoursCheckBox" Content="Hours" HorizontalAlignment="Left" Margin="36,119,0,0" VerticalAlignment="Top" Checked="hoursCheckBox_Checked" Unchecked="hoursCheckBox_Unchecked"/>
+        <CheckBox x:Name="secondsCheckBox" Content="Seconds" Grid.Column="2" HorizontalAlignment="Left" Margin="42,119,0,0" VerticalAlignment="Top" Checked="secondsCheckBox_Checked" Unchecked="secondsCheckBox_Unchecked"/>
+        <CheckBox x:Name="millisecondsCheckBox" Content="Milliseconds" Grid.Column="3" HorizontalAlignment="Left" Margin="28,120,0,0" VerticalAlignment="Top" Checked="millisecondsCheckBox_Checked" Unchecked="millisecondsCheckBox_Unchecked"/>
     </Grid>
 </Window>
